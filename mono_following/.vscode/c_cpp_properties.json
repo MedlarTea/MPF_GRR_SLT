@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/usr/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/src/mono_tracking/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/src/mono_following/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/devel/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

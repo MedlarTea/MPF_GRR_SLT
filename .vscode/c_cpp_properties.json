@@ -1,0 +1,55 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/jing/Data/Projects/HumanFollowing/codes/mono_following_ws/devel/include/**",
+        "/home/jing/ws_tr/devel/include/**",
+        "/home/jing/workspace/leg_ws/devel/include/**",
+        "/home/jing/workspace/track_ws/devel/include/**",
+        "/home/jing/workspace/catographer_ws/install_isolated/include/**",
+        "/home/jing/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/devel/include/**",
+        "/home/jing/workspace/vtp_ws/devel/include/**",
+        "/home/jing/catkin_ws/src/cam_lidar_calibration/include/**",
+        "/home/jing/workspace/track_ws/src/camera_lidar_sync/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/src/ccf_person_identification/include/**",
+        "/home/jing/catkin_ws/src/dingo_robot/dingo_base/include/**",
+        "/home/jing/catkin_ws/src/ethzasl_icp_mapping/ethzasl_gridmap_2d/include/**",
+        "/home/jing/workspace/track_ws/src/fused_tracker/include/**",
+        "/home/jing/Models/nkj_ws/src/get_img_pose/include/**",
+        "/home/jing/ws_tr/src/laser_teach_repeat/include/**",
+        "/home/jing/ws_tr/src/leg_tracker/include/**",
+        "/home/jing/ws_tr/src/libpointmatcher_ros/include/**",
+        "/home/jing/ws_tr/src/ltr/include/**",
+        "/home/jing/Data/Projects/HumanFollowing/codes/mono_following_ws/src/mono_control/include/**",
+        "/home/jing/Data/Projects/HumanFollowing/codes/mono_following_ws/src/mono_following/include/**",
+        "/home/jing/Data/Projects/HumanFollowing/codes/mono_following_ws/src/mono_tracking/include/**",
+        "/home/jing/workspace/my_mono_foll_ws/src/monocular_person_following/include/**",
+        "/home/jing/catkin_ws/src/motion_capture_teach_repeat/include/**",
+        "/home/jing/catkin_ws/src/puma_motor_driver/puma_motor_driver/include/**",
+        "/home/jing/catkin_ws/src/ros_autonomous_slam/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/detection/monocular_detectors/rwth_ground_hog/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/utils/rwth_ground_plane/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/detection/rgbd_detectors/rwth_upper_body_detector/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/utils/spencer_diagnostics/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_detectors/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_features/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/detection/laser_detectors/srl_laser_segmentation/include/**",
+        "/home/jing/workspace/leg_ws/src/spencer_people_tracking/tracking/people/srl_nearest_neighbor_tracker/include/**",
+        "/home/jing/catkin_ws/src/velodyne/velodyne_driver/include/**",
+        "/home/jing/catkin_ws/src/velodyne/velodyne_laserscan/include/**",
+        "/home/jing/catkin_ws/src/velodyne/velodyne_pcl/include/**",
+        "/home/jing/catkin_ws/src/velodyne/velodyne_pointcloud/include/**",
+        "/home/jing/workspace/vtp_ws/src/vtr_lite/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

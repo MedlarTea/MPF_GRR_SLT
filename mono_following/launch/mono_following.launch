@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="use_sim_time" default="true" />
+<param name="use_sim_time" value="$(arg use_sim_time)" />
+<arg name="store_dir" default="/home/yjw/mono_following/datasets/ccf_failure_dataset/room433/debug/tracks" />
+<node pkg="mono_following" type="mono_following_node.py" name="mono_following_node" output="screen" cwd='node'>
+    <param name="track_store_dir" value="$(arg store_dir)"/>
+    <param name="initial_training_num_samples" value="5"/>
+    <param name="min_target_confidence" value="-1"/>
+    <param name="id_switch_detection_thresh" value="0.35"/>
+    <param name="reid_pos_confidence_thresh" value="0.60"/>
+    <param name="reid_neg_confidence_thresh" value="0.3"/>
+    <param name="reid_positive_count" value="5"/>
+</node>
+</launch>
