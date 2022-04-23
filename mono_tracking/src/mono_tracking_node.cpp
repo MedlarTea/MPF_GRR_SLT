@@ -166,7 +166,7 @@ private:
             // Convert sensor_msgs::Image to cv::Mat
             cv_bridge::CvImagePtr cv_ptr;
             try{
-                cv_ptr = cv_bridge::toCvCopy(boxes_msg->image, sensor_msgs::image_encodings::BGR8);
+                cv_ptr = cv_bridge::toCvCopy(boxes_msg->image, sensor_msgs::image_encodings::BGR8);  // change to BGR8 whatever it's RGB or BGR
             }
             catch (cv_bridge::Exception& e){
                 ROS_ERROR("cv_bridge exception: %s", e.what());
@@ -175,7 +175,7 @@ private:
             cv::Mat frame = cv_ptr->image;
             cout << "People Visualizing" << endl;
             visualize(frame, observations);
-            cv_ptr->encoding = "bgr8";
+            // cv_ptr->encoding = "bgr8";
             cv_ptr->header.stamp = ros::Time::now();
             cv_ptr->image = frame;
             image_pub.publish(cv_ptr->toImageMsg());

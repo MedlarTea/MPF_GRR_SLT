@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-<arg name="use_sim_time" default="true" />
-<param name="use_sim_time" value="$(arg use_sim_time)" />
+<param name="use_sim_time" value="false" />
 <arg name="store_dir" default="/home/yjw/mono_following/datasets/ccf_failure_dataset/room433/debug/tracks" />
 <node pkg="mono_following" type="mono_following_node.py" name="mono_following_node" output="screen" cwd='node'>
     <param name="track_store_dir" value="$(arg store_dir)"/>

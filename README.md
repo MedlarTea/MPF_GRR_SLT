@@ -17,7 +17,6 @@ conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 2. Install python related packages:
 ```bash
 pip install -r requirements.txt
-pip install pycocotools
 git clone https://github.com/eric-wieser/ros_numpy
 cd ros_numpy
 python setup.py install

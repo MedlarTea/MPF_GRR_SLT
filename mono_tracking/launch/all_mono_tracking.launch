@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
   <!--robot tf frames-->
-  <arg name="sim" default="False"/>
-  <param name="use_sim_time" value="true" />
+  <arg name="sim" default="false"/>
+  <param name="use_sim_time" value="false" />
 
   <node pkg="image_transport" type="republish" name="decompress" args="compressed in:=/camera/color/image_raw raw out:=/camera/color/image_raw" if="$(arg sim)"/>
 

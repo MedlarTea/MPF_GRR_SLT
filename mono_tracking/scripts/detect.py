@@ -17,7 +17,7 @@ _dir = os.path.split(os.path.realpath(__file__))[0]
 
 class MonoDetector:
     def __init__(self):
-        self.detector = PersonDetector(model='yolox-m', ckpt=os.path.join(_dir, 'yolox_descriptor/weights/yolox_m.pth.tar'))
+        self.detector = PersonDetector(model='yolox-s', ckpt=os.path.join(_dir, 'yolox_descriptor/weights/yolox_s.pth.tar'))
         # self.extractor = PersonExtractor(model_path=os.path.join(_dir,"yolox_descriptor/deep/checkpoint/ckpt.t7"))
 
         IMAGE_TOPIC = "/camera/color/image_raw"
@@ -42,8 +42,10 @@ class MonoDetector:
         In my RTX2060, time-0.05s(20Hz), detect-0.039/0.050, extract-0.009/0.050
         """
         once_end = time.time()
-        image = ros_numpy.numpify(imgMsg)
-        cv2.imwrite("./test.jpg", image)
+        if imgMsg.encoding == "rgb8":
+            image = ros_numpy.numpify(imgMsg)
+        elif imgMsg.encoding == "bgr8":
+            image = ros_numpy.numpify(imgMsg)[:,:,[2,1,0]]  # change to rgb
 
         # detect
         detect_end = time.time()

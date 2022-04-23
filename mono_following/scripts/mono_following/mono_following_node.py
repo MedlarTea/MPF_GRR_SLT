@@ -40,6 +40,8 @@ class MonoFollowing:
         self.tracks_sub = rospy.Subscriber("/mono_tracking/tracks", TrackArray, self.callback)
         # publish image for visualization
         self.image_pub = rospy.Publisher("/mono_following/vis_image", Image, queue_size=1)
+        # publish image patches for visualization
+        self.patches_pub = rospy.Publisher("/mono_following/patches", Image, queue_size=1)
         # publish target information
         self.target_pub = rospy.Publisher("/mono_following/target", Target, queue_size=1)
 
@@ -51,7 +53,10 @@ class MonoFollowing:
         # print("CALLBACK")
         # get messages
         self.tracks = {}
-        image = ros_numpy.numpify(tracks_msg.image)
+        if tracks_msg.image.encoding == "rgb8":
+            image = ros_numpy.numpify(tracks_msg.image)
+        elif tracks_msg.image.encoding == "bgr8":
+            image = ros_numpy.numpify(tracks_msg.image)[:,:,[2,1,0]]  # change to rgb
 
         for track in tracks_msg.tracks:
             self.tracks[track.id] = Tracklet(tracks_msg.header, track, image)
@@ -88,11 +93,19 @@ class MonoFollowing:
         
         # publish image containing the identification result
         if self.image_pub.get_num_connections():
-            image = self.visualize(image, self.tracks)
-            image_msg = ros_numpy.msgify(Image, image, encoding="bgr8")
+            image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+            image_bgr = self.visualize(image_bgr, self.tracks)
+            image_msg = ros_numpy.msgify(Image, image_bgr, encoding = "bgr8")
             self.image_pub.publish(image_msg)
             if self.SAVE_IMAGES:
                 pass
+        # publish target patch to see whether is OK
+        if self.patches_pub.get_num_connections():
+            image = self.visualize_patches(self.tracks)
+            if image is not None:
+                # cv2.imwrite("./test.jpg", image)
+                image_msg = ros_numpy.msgify(Image, image, encoding = "rgb8")
+                self.patches_pub.publish(image_msg)
 
         # Save tracks information, for debug and analysis
         if self.SAVE_TRACKS:
