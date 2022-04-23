@@ -11,7 +11,7 @@ Our computer settings:
 ```bash
 conda create -n mono_following python=3.8
 conda activate mono_following
-# This is based on your GPU settings
+# This is based on your GPU settings, other settings should be careful
 conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 2. Install python related packages:
@@ -44,7 +44,7 @@ base_link->camera_link->camera_optical_link
 # If running with rosbag, use_sim_time:=true; if the image topic is compressed, sim:=true
 roslaunch mono_tracking all_mono_tracking.launch sim:=true use_sim_time:=true
 # If running in real robot, use_sim_time:=false;
-roslaunch mono_tracking all_mono_tracking.launch sim:=true use_sim_time:=false
+roslaunch mono_tracking all_mono_tracking.launch sim:=false use_sim_time:=false
 ```
 - Input: /camera/color/image_raw
 - Output: mono_tracking/msg/TrackArray.msg
