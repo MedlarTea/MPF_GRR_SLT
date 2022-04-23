@@ -65,7 +65,7 @@ class MonoFollowing:
         self.descriminator.extractFeatures(self.tracks)
         
         # update the state
-        print(self.state.state_name())
+        # print(self.state.state_name())
         next_state = self.state.update(self.descriminator, self.tracks)
         if next_state is not self.state:
             self.state = next_state
@@ -129,6 +129,12 @@ class MonoFollowing:
     def saveTrack(self, track_id, track, store_path):
         print("SAVE TRACKS")
 
+    def visualize_patches(self, tracks):
+        target_id = self.state.target()
+        if target_id in tracks.keys() and self.tracks[target_id].image_patch is not None:
+            return self.tracks[target_id].image_patch
+        else:
+            return None
 if __name__ == "__main__":
     rospy.init_node('mono_following', anonymous=True)
     mono_following = MonoFollowing()

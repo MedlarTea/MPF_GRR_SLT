@@ -9,15 +9,15 @@ from sensor_msgs.msg import Image
 from mono_tracking.msg import Box
 from mono_tracking.msg import BoxArray
 
-from yolox.YOLOX.detector import PersonDetector
-from yolox.utils.meters import AverageMeter
+from detector_2d.YOLOX.detector import PersonDetector
+from detector_2d.utils.meters import AverageMeter
 
 _dir = os.path.split(os.path.realpath(__file__))[0]
 
 
 class MonoDetector:
     def __init__(self):
-        self.detector = PersonDetector(model='yolox-s', ckpt=os.path.join(_dir, 'yolox_descriptor/weights/yolox_s.pth.tar'))
+        self.detector = PersonDetector(model='yolox-s', ckpt=os.path.join(_dir, 'detector_2d/weights/yolox_s.pth.tar'))
         # self.extractor = PersonExtractor(model_path=os.path.join(_dir,"yolox_descriptor/deep/checkpoint/ckpt.t7"))
 
         IMAGE_TOPIC = "/camera/color/image_raw"
