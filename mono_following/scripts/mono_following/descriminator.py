@@ -3,7 +3,7 @@ import numpy as np
 import rospy
 # from tracklet import Tracklet
 from reid.RRClassifier import RRClassifierWithStrategy
-from reid.yolox_descriptor.deep.feature_extractor import PersonExtractor
+from reid.descriptor.deep.feature_extractor import PersonExtractor
 """
 Thread 1:
 1. Store features
@@ -14,7 +14,7 @@ Thread 2:
 class Descriminator:
     def __init__(self):
         # Initialize the feature extraction
-        self.extractor = PersonExtractor(model_path=os.path.join("reid/yolox_descriptor/deep/checkpoint/ckpt.t7"))
+        self.extractor = PersonExtractor(model_path=os.path.join("reid/descriptor/deep/checkpoint/ckpt.t7"))
 
         # Initialize our target classifier
         alpha = 1.0

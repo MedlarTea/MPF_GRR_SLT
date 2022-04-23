@@ -24,8 +24,8 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   message_generation
   cv_bridge
-  # pcl_ros
-  # pcl_conversions
+  pcl_ros
+  pcl_conversions
   # velodyne_pcl
   # velodyne_pointcloud
   message_filters
@@ -33,7 +33,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(OpenCV 3.4 REQUIRED)
 find_package(Eigen3 REQUIRED)
-# find_package(PCL 1.8 REQUIRED)
+find_package(PCL 1.8 REQUIRED)
 
 add_message_files(
   FILES

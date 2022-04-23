@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mkdir",
+            "options": {
+                "cwd": "${fileDirname}" 
+            },
+            "type": "shell",
+            "command": "mkdir -p build"
+        },
+        {
+            "label": "cmake",
+            "options": {
+                "cwd": "${fileDirname}/build"    //切换到build 下，重要！
+            },
+            "type": "shell",
+            "command": "cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug .. ",
+            "dependsOn":["mkdir"]
+        },
+        {
+            "label": "make",
+            "options": {
+                "cwd": "${fileDirname}/build"  //切换到build 下，重要！
+            },
+            "type": "shell",
+            "command": "make -j4",  //-j n 电脑几核就可以写几，加快编译速度
+            "dependsOn": [ "cmake" ]  //非常重要！ make 的执行依赖 Cmake 执行完毕，不然呵呵
+        }
+    ]
+}

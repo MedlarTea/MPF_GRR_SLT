@@ -1,5 +1,7 @@
 # base ----------------------------------------
-
+loguru==0.5.3
+thop==0.0.31.post2005241907
+tabulate==0.8.9
 matplotlib>=3.2.2
 numpy>=1.18.5
 opencv-python>=4.1.2
@@ -10,6 +12,7 @@ scipy>=1.4.1
 torch>=1.7.0
 torchvision>=0.8.1
 tqdm>=4.41.0
+sympy
 
 # plotting ------------------------------------
 
@@ -37,26 +40,4 @@ imageio
 # ros
 
 rosbag==1.14.11
-rosboost-cfg==1.14.9
-rosclean==1.14.9
-roscreate==1.14.9
-rosgraph==1.14.11
-roslaunch==1.14.11
-roslib==1.14.9
-roslint==0.11.2
-roslz4==1.14.11
-rosmake==1.14.9
-rosmaster==1.14.11
-rosmsg==1.14.11
-rosnode==1.14.11
-rosparam==1.14.11
-rospkg==1.3.0
 rospy==1.14.11
-rosserial-arduino==0.8.0
-rosserial-client==0.8.0
-rosserial-python==0.8.0
-rosservice==1.14.11
-rostest==1.14.11
-rostopic==1.14.11
-rosunit==1.14.9
-roswtf==1.14.11

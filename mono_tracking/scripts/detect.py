@@ -9,8 +9,8 @@ from sensor_msgs.msg import Image
 from mono_tracking.msg import Box
 from mono_tracking.msg import BoxArray
 
-from yolox_descriptor.YOLOX.detector import PersonDetector
-from yolox_descriptor.utils.meters import AverageMeter
+from yolox.YOLOX.detector import PersonDetector
+from yolox.utils.meters import AverageMeter
 
 _dir = os.path.split(os.path.realpath(__file__))[0]
 
@@ -43,7 +43,8 @@ class MonoDetector:
         """
         once_end = time.time()
         image = ros_numpy.numpify(imgMsg)
-        
+        cv2.imwrite("./test.jpg", image)
+
         # detect
         detect_end = time.time()
         xywh, scores = self.detector.detect(image, conf=0.7)

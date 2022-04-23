@@ -3,13 +3,16 @@
 <img src="pictures/following-closely-method.png" alt="following-closely-method" style="zoom: 100%;" />
 
 ## Dependencies
+Our computer settings:
 - Ubuntu 18.04
 - Melodic
+- GTX 2060
 1. Create a conda environment and install pytorch
 ```bash
 conda create -n mono_following python=3.8
 conda activate mono_following
-conda install pytorch torchvision -c pytorch
+# This is based on your GPU settings
+conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 2. Install python related packages:
 ```bash
@@ -20,12 +23,13 @@ cd ros_numpy
 python setup.py install
 ```
 3. Install cpp related packages:
+
 - OpenCV==3.4
 - Eigen==3.0+
 
 ## Download pre-trained weights
 
-- Download [yolox-s](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/EW62gmO2vnNNs5npxjzunVwB9p307qqygaCkXdTO88BLUg?e=NMTQYw) and [yolox-m](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/ERMTP7VFqrVBrXKMU7Vl4TcBQs0SUeCT7kvc-JdIbej4tQ?e=1MDo9y), then put them to `mono_tracking/scripts/yolox_descriptor/weights`
+- Download [yolox-s](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/EW62gmO2vnNNs5npxjzunVwB9p307qqygaCkXdTO88BLUg?e=NMTQYw) and [yolox-m](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/ERMTP7VFqrVBrXKMU7Vl4TcBQs0SUeCT7kvc-JdIbej4tQ?e=1MDo9y), then put them to `mono_tracking/scripts/yolox/weights`
 
 ## Our tf tree
 ```bash
