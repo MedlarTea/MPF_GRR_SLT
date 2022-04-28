@@ -6,7 +6,7 @@
 Our computer settings:
 - Ubuntu 18.04
 - Melodic
-- GTX 2060
+- GTX 2060/ GTX 1650
 1. Create a conda environment and install pytorch
 ```bash
 conda create -n mono_following python=3.8
@@ -28,7 +28,7 @@ python setup.py install
 
 ## Download pre-trained weights
 
-- Download [yolox-s](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/EW62gmO2vnNNs5npxjzunVwB9p307qqygaCkXdTO88BLUg?e=NMTQYw) and [yolox-m](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/ERMTP7VFqrVBrXKMU7Vl4TcBQs0SUeCT7kvc-JdIbej4tQ?e=1MDo9y), then put them to `mono_tracking/scripts/yolox/weights`
+- Download [yolox-s](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/EW62gmO2vnNNs5npxjzunVwB9p307qqygaCkXdTO88BLUg?e=NMTQYw) and [yolox-m](https://megvii-my.sharepoint.cn/:u:/g/personal/gezheng_megvii_com/ERMTP7VFqrVBrXKMU7Vl4TcBQs0SUeCT7kvc-JdIbej4tQ?e=1MDo9y), then make director `mono_tracking/scripts/detector_2d/weights` and put the checkpoints to it.
 
 ## Our tf tree
 ```bash
@@ -55,7 +55,7 @@ roslaunch mono_tracking all_mono_tracking.launch sim:=false use_sim_time:=false
 # launch our GRR_SLT_MPF person following, use_sim_time:=true for rosbag
 roslaunch mono_followng mono_following.launch use_sim_time:=true
 # launch our GRR_SLT_MPF person following, use_sim_time:=false for robot running
-roslaunch mono_followng mono_following.launch use_sim_time:=false
+roslaunch mono_following mono_following.launch use_sim_time:=false
 ```
 - Input: mono_tracking/msg/TrackArray.msg
 - Output: mono_following/msg/Target.msg

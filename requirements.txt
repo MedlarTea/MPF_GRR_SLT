@@ -40,5 +40,4 @@ imageio
 
 # ros
 
-rosbag==1.14.11
-rospy==1.14.11
+rospy
