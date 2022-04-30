@@ -26,6 +26,8 @@
     
 
     <!-- tracking parameters -->
+    <!-- target's real width-->
+    <param name="real_width" value="0.55"/>
     <param name="max_dist" value="100"/>
     <param name="lambda" value="0.5"/>
     <param name="tracking_remove_trace_thresh" value="7.0"/>

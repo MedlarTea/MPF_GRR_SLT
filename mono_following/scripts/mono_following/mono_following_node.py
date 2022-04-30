@@ -99,6 +99,7 @@ class MonoFollowing:
             self.image_pub.publish(image_msg)
             if self.SAVE_IMAGES:
                 pass
+
         # publish target patch to see whether is OK
         if self.patches_pub.get_num_connections():
             image = self.visualize_patches(self.tracks)

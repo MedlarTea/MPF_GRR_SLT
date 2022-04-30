@@ -73,12 +73,19 @@ roslaunch mono_control mono_controlling.launch
 ## Custom built Dataset
 <img src="pictures/performance.gif" alt="performance" style="zoom: 100%;" />
 
-- TODO
+## TODO
+- Improve simplicity of the code
+- Release evaluation results
 
 ## Citation
-- "Following Closely: A Robust Monocular Person Following System for Mobile Robot"
-- The paper is under review
-
+```bash
+@article{ye2022following,
+  title={Following Closely: A Robust Monocular Person Following System for Mobile Robot},
+  author={Ye, Hanjing and Zhao, Jieting and Pan, Yaling and Chen, Weinan and Zhang, Hong},
+  journal={arXiv preprint arXiv:2204.10540},
+  year={2022}
+}
+```
 ## Acknowledge
 - [YOLOX_deepsort_tracker](https://github.com/pmj110119/YOLOX_deepsort_tracker)
 - [monocular_person_following](https://github.com/koide3/monocular_person_following)
