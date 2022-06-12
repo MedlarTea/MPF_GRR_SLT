@@ -21,7 +21,7 @@ class MonoDetector:
         # self.extractor = PersonExtractor(model_path=os.path.join(_dir,"yolox_descriptor/deep/checkpoint/ckpt.t7"))
 
         IMAGE_TOPIC = "/camera/color/image_raw"
-        self.imageSub = rospy.Subscriber(IMAGE_TOPIC, Image, self.imageCallback)
+        self.imageSub = rospy.Subscriber(IMAGE_TOPIC, Image, self.imageCallback, queue_size=1, buff_size=999999999)
 
         BOXES_TOPIC = "people/boxes"
         self.boxesPub = rospy.Publisher(BOXES_TOPIC, BoxArray, queue_size=1)
